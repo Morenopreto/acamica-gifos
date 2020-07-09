@@ -1,0 +1,21 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+}
+
+main #search-sect {
+  width: 100%;
+}
+
+main #search-sect #people-draw {
+  width: 72.8vw;
+  height: 22.26vh;
+  margin-left: 13.6vw;
+}
+/*# sourceMappingURL=main.css.map */

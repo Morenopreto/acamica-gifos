@@ -1,0 +1,194 @@
+header {
+  width: 100%;
+  height: 100px;
+}
+#add-gif {
+  display: none;
+}
+
+.navdiv {
+  position: relative;
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  //   margin: 20px 0px 0px 0px;
+  min-height: 50px;
+  color: #333;
+  border-top: 5px solid $violet;
+  overflow: hidden;
+
+  /* hasta aca joya */
+  .menucheckbox {
+    display: none;
+  }
+  .burger {
+    position: relative;
+    float: right;
+    // margin-left: 27px;
+    width: 60px;
+    height: 95px;
+    cursor: pointer;
+
+    & span,
+    & span:after,
+    & span:before {
+      position: absolute;
+      width: 15px;
+      height: 2px;
+      border-radius: 0.2em;
+      background: $violet;
+      top: 52px;
+      right: 27px;
+    }
+    & span:after,
+    & span:before {
+      content: "";
+      right: 0;
+    }
+
+    & span:before {
+      top: -6px;
+    }
+    & span:after {
+      top: 6px;
+    }
+  }
+  /* hasta aca joya */
+  .menucheckbox:checked {
+    & + .burger span {
+      height: 0;
+      width: 0;
+    }
+    & + .burger span:before,
+    & + .burger span:after {
+      top: 6px;
+    }
+    & + .burger span:before {
+      transform: rotate(225deg);
+    }
+    & + .burger span:after {
+      transform: rotate(-225deg);
+    }
+  }
+
+  ul {
+    position: relative;
+    float: left;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & a {
+      position: relative;
+      float: left;
+      width: 100%;
+      height: 0;
+      line-height: 50px;
+      padding: 0 15px;
+      text-decoration: none;
+      overflow: hidden;
+      color: white;
+      text-align: left;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+
+  #menuinput:checked {
+    ~ nav ul {
+      padding-top: 15px;
+      height: calc(100vh - 100px);
+      background: $violet-opacity;
+    }
+
+    ~ nav ul a {
+      height: 10.274vh;
+      display: block;
+      text-align: center;
+    }
+
+    ~ nav ul a::after {
+      position: absolute;
+      content: "";
+      opacity: 0.5;
+      background: #ffffff;
+      width: 10.93%;
+      height: 0.1px;
+      left: 44.54%;
+      top: 9.274vh;
+    }
+  }
+
+  #img-log {
+    float: left;
+    margin: 29px 0 0 22px;
+    width: 48.8px;
+    img {
+      width: 48.8px;
+    }
+    h2 {
+      position: relative;
+      top: -34px;
+      color: #572ee5;
+      font-size: 16px;
+      margin-left: 8px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .burger {
+      display: none;
+    }
+    nav ul {
+      width: 485px;
+      float: right;
+
+      li {
+        display: inline-flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+
+        a {
+          height: 90px;
+          display: block;
+          text-align: center;
+          width: 100%;
+          color: $violet;
+          padding: 0;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 14px;
+          letter-spacing: 0;
+          text-align: center;
+        }
+      }
+    }
+    #MN {
+      width: 126px;
+      margin-right: 45px;
+    }
+    #fav {
+      width: 84px;
+      margin-right: 42px;
+    }
+    #mi-gif {
+      width: 84px;
+      margin-right: 53px;
+    }
+    #add-gif {
+      display: inline-block;
+      border: 1px solid $violet;
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      background-color: $bg1-light;
+    }
+  }
+}

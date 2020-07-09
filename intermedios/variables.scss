@@ -1,0 +1,87 @@
+$violet: #572ee5;
+$aqua-green: #50e3c2;
+$i-color: #CDD6E0;
+$violet-opacity: rgba(87, 46, 229, 0.9);
+// $font-bold: "pn-bold";
+// $font-regular: "pn-regular";
+
+// THEMES VARIABLES
+// LIGHT THEME
+$bg1-light: #ffffff;
+$bg2-light: #f3f5f8;
+
+// $text-light:
+// $hover-light:
+// $border-light:
+// $logo-light:
+
+// DARK THEME
+// $bg-dark:
+// $text-dark:
+// $hover-dark:
+// $border-dark:
+// $logo-dark:
+// @font-face{
+//   font-family: "pn-regular";
+//   src: url("proxima_ssv/ProximaNova-Regular.otf");
+// }  
+// @font-face{
+//   font-family: "pn-bold";
+//   src: url("proxima_ssv/ProximaNovaAltBold.otf");
+// }
+@mixin search-button {
+  background: $bg1-light;
+  border: 1px solid $violet;
+  border-radius: 27px;
+  border-radius: 27px;
+  height: 50px;
+  width: 89.06vw;
+  margin-left: 5.47vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  
+  input {
+    height: 22px;
+    width: 57vw;
+    // font-family: ProximaNova-Regular;
+    font-size: 16px;
+    color: #000000;
+    text-align: left;
+    padding: 11px 0 11px 14.6vw;
+    box-sizing: content-box;
+
+  }
+  button{
+  color: $violet;
+  width: 22px;
+  height: 45px;
+  background: transparent;
+ i{
+  transform: scale(1.5)
+ }}
+}
+
+@mixin h1 {
+  
+  font-size: 30px;
+  color: $violet;
+  text-align: center;
+  line-height: 36px;
+  #green-text {
+    color: $aqua-green;
+  }
+}
+@mixin viol-tacent- {
+    color: $violet;
+    text-align: center;
+    line-height: 25px;  
+    
+}
+@mixin flex-rw {
+  display: flex;
+  flex-flow: row wrap;  
+  justify-content: center;
+}
