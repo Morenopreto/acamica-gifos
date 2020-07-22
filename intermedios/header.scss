@@ -14,7 +14,7 @@ header {
   margin: 0;
   //   margin: 20px 0px 0px 0px;
   min-height: 50px;
-  color: #333;
+  // color: #333;
   border-top: 5px solid $violet;
   overflow: hidden;
 
@@ -89,7 +89,7 @@ header {
       padding: 0 15px;
       text-decoration: none;
       overflow: hidden;
-      color: white;
+      // color: white;
       text-align: left;
 
       &:hover,
@@ -146,27 +146,32 @@ header {
       display: none;
     }
     nav ul {
-      width: 485px;
+      width: 50%;
       float: right;
+      display: flex;
+      flex-flow: row wrap;
 
       li {
         display: inline-flex;
         flex-flow: row wrap;
         justify-content: center;
         align-content: center;
+        width: 18%;
 
         a {
           height: 90px;
-          display: block;
-          text-align: center;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
           width: 100%;
-          color: $violet;
+          // color: $violet;
           padding: 0;
           font-weight: bold;
           text-transform: uppercase;
           font-size: 14px;
           letter-spacing: 0;
-          text-align: center;
+        
         }
       }
     }

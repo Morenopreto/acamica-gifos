@@ -16,10 +16,11 @@ $bg2-light: #f3f5f8;
 // $logo-light:
 
 // DARK THEME
-// $bg-dark:
-// $text-dark:
+$bg1-dark:#37383C;
+$bg2-dark:#222326;
+$text-dark: #FFFFFF; 
 // $hover-dark:
-// $border-dark:
+$border-dark: 1px solid #FFFFFF;
 // $logo-dark:
 // @font-face{
 //   font-family: "pn-regular";
@@ -29,6 +30,23 @@ $bg2-light: #f3f5f8;
 //   font-family: "pn-bold";
 //   src: url("proxima_ssv/ProximaNovaAltBold.otf");
 // }
+.font-light{
+  color: $violet;
+  
+}
+.font-dark{
+  color: $bg1-light;
+}
+
+.bg-light{
+  background-color: $bg1-light;
+  
+}
+.bg-dark{
+  background-color: $bg1-dark;
+  transition: all 0.3s;
+  
+}
 @mixin search-button {
   background: $bg1-light;
   border: 1px solid $violet;
@@ -67,7 +85,6 @@ $bg2-light: #f3f5f8;
 @mixin h1 {
   
   font-size: 30px;
-  color: $violet;
   text-align: center;
   line-height: 36px;
   #green-text {
@@ -75,7 +92,7 @@ $bg2-light: #f3f5f8;
   }
 }
 @mixin viol-tacent- {
-    color: $violet;
+    // color: $violet;
     text-align: center;
     line-height: 25px;  
     

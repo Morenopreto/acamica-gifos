@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=variables.css.map */
+.font-light {
+  color: #572ee5;
+}
+
+.font-dark {
+  color: #ffffff;
+}
+
+.bg-light {
+  background-color: #ffffff;
+}
+
+.bg-dark {
+  background-color: #37383C;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/*# sourceMappingURL=variables.css.map */
