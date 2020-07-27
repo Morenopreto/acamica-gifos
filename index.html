@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css"> -->
     <script
       src="https://kit.fontawesome.com/7f2c6b5e53.js"
       crossorigin="anonymous"
@@ -11,7 +12,7 @@
     <title>Gifos</title>
   </head>
   <body>
-    <header class="bg-light" >
+    <header class="bg-light">
       <div class="navdiv">
         <span id="img-log">
           <img src="assets/logo-desktop-modo-noc.svg" alt="logo-gifos" />
@@ -26,23 +27,25 @@
         <label for="menuinput" class="burger menu"><span></span></label>
         <nav>
           <ul>
-            <li id="MN" class="navli"><a class="font-light">Modo Nocturno</a></li>
+            <li id="MN" class="navli">
+              <a class="font-light">Modo Nocturno</a>
+            </li>
 
             <li id="fav" class="navli"><a class="font-light">Favoritos</a></li>
 
-            <li id="mi-gif" class="navli"><a class="font-light" >Mis GIFOS</a></li>
+            <li id="mi-gif" class="navli">
+              <a class="font-light">Mis GIFOS</a>
+            </li>
             <li><button id="add-gif"></button></li>
           </ul>
-          
         </nav>
-        
       </div>
     </header>
     <main class="bg-light">
       <section id="search-sect">
         <h1 class="font-light">
-          <span id="firstpart-h1"> Inspírate, busca, guarda, y crea </span><span> los
-          mejores</span><span id="green-text"> GIFOS</span>
+          <span id="firstpart-h1"> Inspírate, busca, guarda, y crea </span
+          ><span> los mejores</span><span id="green-text"> GIFOS</span>
         </h1>
         <img
           src="assets/ilustra_header.svg"
@@ -55,7 +58,9 @@
         </div>
         <div id="h3-p">
           <h3 class="font-light">Trending:</h3>
-          <p class="font-light">Reactions, Entertainment, Sports, Stickers, Artists</p>
+          <p class="font-light">
+            Reactions, Entertainment, Sports, Stickers, Artists
+          </p>
         </div>
       </section>
 
@@ -65,38 +70,80 @@
           <span id="mira-span"> Mira los últimos </span> GIFOS de nuestra
           comunidad.
         </p>
+        <i class="far fa-caret-square-left square-i"></i>
         <ul id="ul-carrousel">
-          <li class="carrousel">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
-              alt=""
-            />
+          <li class="carrousel primer-li" id="li1" style="background-color: red;">
+            <div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
+                alt=""
+              />
+              <i class="far fa-heart i-heart"></i>
+              <i class="fas fa-heart i-download"></i>
+              <i class="fas fa-expand-alt i-expand"></i>
+              <p class="user-carrousel">User</p>
+              <p class="titulo-carrousel">Titulo GIFOS</p>
+            </div>
           </li>
-          <li class="carrousel">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
-              alt=""
-            />
+          <li class="carrousel segundo-li" id="li2" style="background-color: blue;">
+            <div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
+                alt=""
+              />
+              <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
+              <i class="far fa-heart i-heart"></i>
+              <i class="fas fa-heart i-download"></i>
+              <i class="fas fa-expand-alt i-expand"></i>
+              <p class="user-carrousel">User</p>
+              <p class="titulo-carrousel">Titulo GIFOS</p>
+            </div>
           </li>
-          <li class="carrousel">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
-              alt=""
-            />
+          <li class="carrousel tercer-li" id="li3" style="background-color: pink;">
+            <div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
+                alt=""
+              />
+              <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
+              <i class="far fa-heart i-heart"></i>
+              <i class="fas fa-heart i-download"></i>
+              <i class="fas fa-expand-alt i-expand"></i>
+              <p class="user-carrousel">User</p>
+              <p class="titulo-carrousel">Titulo GIFOS</p>
+              
+            </div>
           </li>
-          <li class="carrousel">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
-              alt=""
-            />
+          <li class="carrousel oculto1" id="li4" style="background-color: purple;">
+            <div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
+                alt=""
+              />
+              <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
+              <i class="far fa-heart i-heart"></i>
+              <i class="fas fa-heart i-download"></i>
+              <i class="fas fa-expand-alt i-expand"></i>
+              <p class="user-carrousel">User</p>
+              <p class="titulo-carrousel">Titulo GIFOS</p>
+            </div>
           </li>
-          <li class="carrousel">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
-              alt=""
-            />
+          <li class="carrousel oculto2" id="li5" style="background-color: saddlebrown;">
+            <div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQhKwjXzadLTpAToxpatiZxy6pLbAsVRJb8ASbgOEAcE5Y9EI&s"
+                alt=""
+              />
+              <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
+              <i class="far fa-heart i-heart"></i>
+              <i class="fas fa-heart i-download"></i>
+              <i class="fas fa-expand-alt i-expand"></i>
+              <p class="user-carrousel">User</p>
+              <p class="titulo-carrousel">Titulo GIFOS</p>
+            </div>
           </li>
         </ul>
+        <i class="far fa-caret-square-right square-i"></i>
       </section>
     </main>
     <footer class="bg-light">

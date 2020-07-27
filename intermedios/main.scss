@@ -4,8 +4,8 @@ main {
   #search-sect {
     width: 100%;
     display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
+    flex-flow: row wrap;
+    justify-content: center;
     h1 {
       @include h1;
       width: 76.27vw;
@@ -21,25 +21,28 @@ main {
     .search-bar {
       @include search-button;
     }
-    #h3-p{
+    #h3-p {
       // margin: 43px 0 48px 18.67vw;
       margin: 43px 0 48px 0;
       width: 62.93vw;
       height: 75px;
-    h3,
-    p {
-      // font-family: ProximaNova-Bold;
-      font-size: 18px;
-      text-align: center;
-      line-height: 25px;
+      h3,
+      p {
+        // font-family: ProximaNova-Bold;
+        font-size: 18px;
+        text-align: center;
+        line-height: 25px;
+      }
     }
   }
-  }  
 
   #gif-sect {
     width: 100%;
     background-color: $bg2-light;
     overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     h2 {
       // font-family: "pn-bold";
       font-size: 25px;
@@ -71,46 +74,127 @@ main {
       justify-content: center;
       gap: 22px;
       margin: 0 0 82px 0;
-      .carrousel {
-        @include flex-rw;
-        justify-content: center;
+    }
+    .carrousel {
+      @include flex-rw;
+      justify-content: center;
+      width: 100%;
+      list-style: none;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      img {
         width: 100%;
-        list-style: none;
-        img {
-          width: 100%;
-        }
       }
+      .i-expand {
+        left: 222px;
+        padding: 7.65px;
+        @include i-logos;
+        margin-left: 10px;
+      }
+      .i-download {
+        left: 226px;
+        padding: 7.65px;
+        @include i-logos;
+
+        margin-left: 11px;
+      }
+      .i-heart {
+        left: 230px;
+        padding: 7.65px;
+        @include i-logos;
+      }
+
+      .user-carrousel {
+        // TODO ESTO ES PARA 1440PX!!! FIJARSE EN MOBILE
+        // font-family: ProximaNova-Regular;
+        font-size: 15px;
+        // color: $bg1-light;
+        color: red;
+        display: inline;
+        position: relative;
+        top: -59px;
+        left: -113px;
+        margin: 0;
+      }
+      .titulo-carrousel {
+        // TODO ESTO ES PARA 1440PX!!! FIJARSE EN MOBILE
+        // font-family: ProximaNova-Bold;
+        font-size: 16px;
+        // color: $bg1-light;
+        color: red;
+        display: inline;
+        margin: 0;
+        position: relative;
+        top: -33px;        
+        left: -146px;        
+      }
+      div{height: 100%;}
     }
   }
 
-  @media screen and (min-width:800px)  {
-    #search-sect{
-      
-   h1{
-    width: 64.86vw;
-    margin: 75px 17.59vw 0 17.59vw;
-    height: 100px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    #firstpart-h1{
-      width: 100%;
-    }}
-    .search-bar{
-      width: 38.26vw;
-      margin: 0 30.87vw 0 30.87vw ;
-      input{
-        width: 30vw;
-        padding: 11px 0 11px 3.75vw;
+  @media screen and (min-width: 800px) {
+    #search-sect {
+      h1 {
+        width: 64.86vw;
+        margin: 75px 17.59vw 0 17.59vw;
+        height: 100px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        #firstpart-h1 {
+          width: 100%;
+        }
       }
-   }
-    #people-draw {      
-      min-width: 273px;
-      max-width: 399px;      
-      height: 190px;      
-      margin: 25px 0 -4px 0;
-    }
-    
-  }}
+      .search-bar {
+        width: 38.26vw;
+        margin: 0 30.87vw 0 30.87vw;
+        input {
+          width: 30vw;
+          padding: 11px 0 11px 3.75vw;
+        }
+      }      
+        #people-draw {
+          min-width: 273px;
+          max-width: 399px;
+          height: 190px;
+          margin: 25px 0 -4px 0;       
+        
+      }
 
+    }
+    #gif-sect {
+      .square-i{
+        margin: 0 30px 113px 30px;
+        font-size: 40px;
+        text-align: center;
+        align-self: center;
+        color: $violet;
+      }
+      #ul-carrousel {
+        width: 78.26vw;
+        grid-template: 100% / repeat(3, 1fr);
+        gap: 27px;
+        height: 275px;
+      }
+      .primer-li {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        
+      }
+      .segundo-li {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      .tercer-li {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+      .oculto1 {
+        display: none;
+      }
+      .oculto2 {
+        display: none;
+      }
+    }
+  }
 }

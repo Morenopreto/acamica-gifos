@@ -47,6 +47,18 @@ $border-dark: 1px solid #FFFFFF;
   transition: all 0.3s;
   
 }
+@mixin i-logos {
+  position: relative;
+  z-index: 100;
+  top: -219px;
+  background: $bg1-light;
+  border-radius: 6px;
+  color: $violet;
+  width: 32px;
+  height: 32px;
+  opacity: 0.7;
+  
+}
 @mixin search-button {
   background: $bg1-light;
   border: 1px solid $violet;
