@@ -28,12 +28,9 @@ body {
           box-sizing: border-box;
 }
 
-.font-light {
-  color: #572ee5;
-}
-
-.font-dark {
-  color: #ffffff;
+@font-face {
+  font-family: proxima;
+  src: url("/proxima_ssv/Proxima-Nova-Alt-Light.otf"), url("/proxima_ssv/Proxima-Nova-Alt-Thin.otf"), url("/proxima_ssv/Proxima-Nova-Black.otf"), url("/proxima_ssv/Proxima-Nova-Bold.otf"), url("/proxima_ssv/Proxima-Nova-Extrabold.otf"), url("/proxima_ssv/Proxima-Nova-Thin.otf"), url("/proxima_ssv/ProximaNova-Regular.otf"), url("/proxima_ssv/ProximaNova-AltBold.otf");
 }
 
 .bg-light {
@@ -44,6 +41,14 @@ body {
   background-color: #37383C;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.font-light {
+  color: #572ee5;
+}
+
+.font-dark {
+  color: #ffffff;
 }
 
 header {
@@ -281,17 +286,20 @@ main {
 }
 
 main #search-sect {
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 main #search-sect h1 {
@@ -313,20 +321,20 @@ main #search-sect #people-draw {
 }
 
 main #search-sect .search-bar {
-  background: #ffffff;
+  width: 89.06vw;
+  height: auto;
+  background: transparent;
   border: 1px solid #572ee5;
   border-radius: 27px;
   border-radius: 27px;
-  height: 50px;
-  width: 89.06vw;
   margin-left: 5.47vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -345,6 +353,7 @@ main #search-sect .search-bar input {
   padding: 11px 0 11px 14.6vw;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  outline: none;
 }
 
 main #search-sect .search-bar button {
@@ -357,6 +366,21 @@ main #search-sect .search-bar button {
 main #search-sect .search-bar button i {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+}
+
+main #search-sect .search-bar #divCtrPredictivo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+main #search-sect .search-bar #divCtrPredictivo #label0,
+main #search-sect .search-bar #divCtrPredictivo #label1 {
+  border-bottom: 1px solid grey;
 }
 
 main #search-sect #h3-p {
@@ -372,7 +396,207 @@ main #search-sect #h3-p p {
   line-height: 25px;
 }
 
-main #gif-sect {
+main .sectContGifs {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .sectContGifs #grey-line {
+  width: 20%;
+  height: 1px;
+  margin: 10px 40%;
+  background-color: grey;
+}
+
+main .sectContGifs #h2-keyword {
+  width: 100%;
+  color: #572ee5;
+  text-align: center;
+}
+
+main .sectContGifs .div-cont-gifs {
+  width: 88.8%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (120px)[6];
+  -ms-grid-columns: (46.85%)[2];
+      grid-template: repeat(6, 120px)/repeat(2, 46.85%);
+  -webkit-column-gap: 6.3%;
+          column-gap: 6.3%;
+  row-gap: 21px;
+}
+
+main .sectContGifs .div-cont-gifs .i-div {
+  display: none;
+}
+
+main .sectContGifs .div-cont-gifs .span-gifs-hover {
+  width: 100%;
+  height: 100%;
+  max-width: 156px;
+  max-height: 120px;
+  overflow: hidden;
+}
+
+main .sectContGifs .div-cont-gifs .span-gifs-hover video {
+  width: 100%;
+  height: 100%;
+  max-width: 156px;
+  max-height: 120px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+main .sectContGifs #verMas {
+  padding: 15px 30px;
+  border: 1px solid #572ee5;
+  border-radius: 34px;
+  background: transparent;
+  color: #572ee5;
+}
+
+main .sectContGifs #verMas:hover {
+  background: #572ee5;
+  color: #ffffff;
+}
+
+main #max-section {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #max-section #ctnX {
+  width: 48.26%;
+  height: 20.85%;
+  margin: 0 25.87%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main #max-section #ctnX i {
+  width: 15.2px;
+  margin-top: 66.49px;
+  color: #572ee5;
+}
+
+main #max-section #ctnVideo {
+  width: 100%;
+  height: 50.13%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #max-section #ctnVideo span {
+  width: 48.26%;
+  max-width: 596px;
+  max-height: 385px;
+}
+
+main #max-section #ctnVideo span video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+main #max-section #ctnVideo i {
+  display: none;
+}
+
+main #max-section #ctnVideo i:hover {
+  color: #ffffff;
+  background-color: #572ee5;
+}
+
+main #max-section #ctnip {
+  width: 48.26%;
+  height: 29.04%;
+  margin: 0 25.86%;
+}
+
+main #max-section #ctnip .i-div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 50%;
+}
+
+main #max-section #ctnip .i-div i {
+  background: transparent;
+  border-radius: 6px;
+  border: 1px solid #572ee5;
+  color: #572ee5;
+  width: 36px;
+  height: 36px;
+  padding: 7.65px;
+  margin: 22px 0 0 22px;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+
+main #max-section #ctnip .i-div .fa-expand-alt {
+  display: none;
+}
+
+main #max-section #ctnip .i-p-div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 50%;
+}
+
+main #trend-sect {
   width: 100%;
   background-color: #f3f5f8;
   overflow: hidden;
@@ -388,7 +612,7 @@ main #gif-sect {
           justify-content: center;
 }
 
-main #gif-sect h2 {
+main #trend-sect h2 {
   font-size: 25px;
   text-align: center;
   line-height: 30px;
@@ -397,7 +621,7 @@ main #gif-sect h2 {
   height: 30px;
 }
 
-main #gif-sect p {
+main #trend-sect p {
   font-size: 16px;
   color: #000000;
   text-align: center;
@@ -418,12 +642,12 @@ main #gif-sect p {
           justify-content: center;
 }
 
-main #gif-sect p #mira-span {
+main #trend-sect p #mira-span {
   width: 100%;
   text-align: center;
 }
 
-main #gif-sect #ul-carrousel {
+main #trend-sect #ul-carrousel {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 187px;
@@ -436,7 +660,7 @@ main #gif-sect #ul-carrousel {
   margin: 0 0 82px 0;
 }
 
-main #gif-sect .carrousel {
+main #trend-sect .carrousel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,90 +672,33 @@ main #gif-sect .carrousel {
       -ms-flex-pack: center;
           justify-content: center;
   justify-content: center;
+  overflow: hidden;
   width: 100%;
   list-style: none;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 2;
 }
 
-main #gif-sect .carrousel img {
+main #trend-sect .carrousel video {
   width: 100%;
-}
-
-main #gif-sect .carrousel .i-expand {
-  left: 222px;
-  padding: 7.65px;
-  position: relative;
-  z-index: 100;
-  top: -219px;
-  background: #ffffff;
-  border-radius: 6px;
-  color: #572ee5;
-  width: 32px;
-  height: 32px;
-  opacity: 0.7;
-  margin-left: 10px;
-}
-
-main #gif-sect .carrousel .i-download {
-  left: 226px;
-  padding: 7.65px;
-  position: relative;
-  z-index: 100;
-  top: -219px;
-  background: #ffffff;
-  border-radius: 6px;
-  color: #572ee5;
-  width: 32px;
-  height: 32px;
-  opacity: 0.7;
-  margin-left: 11px;
-}
-
-main #gif-sect .carrousel .i-heart {
-  left: 230px;
-  padding: 7.65px;
-  position: relative;
-  z-index: 100;
-  top: -219px;
-  background: #ffffff;
-  border-radius: 6px;
-  color: #572ee5;
-  width: 32px;
-  height: 32px;
-  opacity: 0.7;
-}
-
-main #gif-sect .carrousel .user-carrousel {
-  font-size: 15px;
-  color: red;
-  display: inline;
-  position: relative;
-  top: -59px;
-  left: -113px;
-  margin: 0;
-}
-
-main #gif-sect .carrousel .titulo-carrousel {
-  font-size: 16px;
-  color: red;
-  display: inline;
-  margin: 0;
-  position: relative;
-  top: -33px;
-  left: -146px;
-}
-
-main #gif-sect .carrousel div {
   height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+main #trend-sect .carrousel .i-div {
+  display: none;
+}
+
+main #trend-sect .carrousel div {
+  width: 100%;
+  height: 100%;
+}
+
+main #trend-sect .square-i {
+  display: none;
 }
 
 @media screen and (min-width: 800px) {
   main #search-sect h1 {
-    width: 64.86vw;
-    margin: 75px 17.59vw 0 17.59vw;
-    height: 100px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -542,6 +709,9 @@ main #gif-sect .carrousel div {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    width: 64.86vw;
+    margin: 75px 17.59vw 0 17.59vw;
+    height: 100px;
   }
   main #search-sect h1 #firstpart-h1 {
     width: 100%;
@@ -560,7 +730,217 @@ main #gif-sect .carrousel div {
     height: 190px;
     margin: 25px 0 -4px 0;
   }
-  main #gif-sect .square-i {
+  main .sectContGifs .div-cont-gifs {
+    margin: 59px 10.8% 78px 10.8%;
+    width: 78.3%;
+    -ms-grid-rows: (200px)[3];
+    -ms-grid-columns: (23.05%)[4];
+        grid-template: repeat(3, 200px)/repeat(4, 23.05%);
+    -webkit-column-gap: 2.6%;
+            column-gap: 2.6%;
+    row-gap: 29px;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover {
+    max-width: 260px;
+    max-height: 200px;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover video {
+    max-height: 200px;
+    max-width: 260px;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-div {
+    -webkit-transition: none;
+    transition: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+    z-index: 10000;
+    background-color: #572ee5;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-div i {
+    background: #ffffff;
+    border-radius: 6px;
+    color: #572ee5;
+    width: 32px;
+    height: 32px;
+    padding: 7.65px;
+    margin: 11px;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-p-div {
+    -webkit-transition: none;
+    transition: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+    top: -278px;
+    z-index: 10000;
+    background-color: #572ee5;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-p-div p {
+    display: inline-block;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .user-carrousel {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0 0 0 10px;
+    width: 100%;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .titulo-carrousel {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 0 10px;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-div,
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-p-div {
+    top: -204px;
+  }
+  main .sectContGifs .div-cont-gifs .span-gifs-hover:hover .i-p-div label {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0 0 0 10px;
+    width: 100%;
+  }
+  main #max-section {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main #max-section #ctnX {
+    width: 48.26%;
+    height: 20.85%;
+    margin: 0 25.87%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  main #max-section #ctnX i {
+    width: 15.2px;
+    margin-top: 66.49px;
+    color: #572ee5;
+  }
+  main #max-section #ctnVideo {
+    width: 100%;
+    height: 50.13%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main #max-section #ctnVideo span {
+    width: 48.26%;
+    max-width: 596px;
+    max-height: 385px;
+  }
+  main #max-section #ctnVideo span video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+  main #max-section #ctnVideo i {
+    display: inline-block;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    color: #572ee5;
+    margin: 0 25px;
+    border: 1px solid #572ee5;
+    font-size: 24px;
+    padding: 8px;
+  }
+  main #max-section #ctnip {
+    width: 48.26%;
+    height: 29.04%;
+    margin: 0 25.86%;
+  }
+  main #max-section #ctnip .i-div {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 50%;
+  }
+  main #max-section #ctnip .i-div i {
+    background: transparent;
+    border-radius: 6px;
+    border: 1px solid #572ee5;
+    color: #572ee5;
+    width: 36px;
+    height: 36px;
+    padding: 7.65px;
+    margin: 22px 0 0 22px;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+  }
+  main #max-section #ctnip .i-div .fa-expand-alt {
+    display: none;
+  }
+  main #max-section #ctnip .i-p-div {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 50%;
+  }
+  main #trend-sect .square-i {
+    display: inline-block;
     margin: 0 30px 113px 30px;
     font-size: 40px;
     text-align: center;
@@ -569,7 +949,7 @@ main #gif-sect .carrousel div {
         align-self: center;
     color: #572ee5;
   }
-  main #gif-sect #ul-carrousel {
+  main #trend-sect #ul-carrousel {
     width: 78.26vw;
     -ms-grid-rows: 100%;
     -ms-grid-columns: (1fr)[3];
@@ -577,26 +957,110 @@ main #gif-sect .carrousel div {
     gap: 27px;
     height: 275px;
   }
-  main #gif-sect .primer-li {
+  main #trend-sect .carrousel {
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  main #trend-sect .carrousel:hover .i-div {
+    -webkit-transition: none;
+    transition: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+    z-index: 10000;
+    background-color: #572ee5;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+  }
+  main #trend-sect .carrousel:hover .i-div i {
+    background: #ffffff;
+    border-radius: 6px;
+    color: #572ee5;
+    width: 32px;
+    height: 32px;
+    padding: 7.65px;
+    margin: 11px;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+  }
+  main #trend-sect .carrousel:hover .i-p-div {
+    -webkit-transition: none;
+    transition: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+    top: -278px;
+    z-index: 10000;
+    background-color: #572ee5;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+  }
+  main #trend-sect .carrousel:hover .i-p-div p {
+    display: inline-block;
+  }
+  main #trend-sect .carrousel:hover .user-carrousel {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0 0 0 10px;
+    width: 100%;
+  }
+  main #trend-sect .carrousel:hover .titulo-carrousel {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 0 10px;
+  }
+  main #trend-sect .carrousel:hover .i-div {
+    top: -278px;
+  }
+  main #trend-sect .primer-li {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 2;
   }
-  main #gif-sect .segundo-li {
+  main #trend-sect .segundo-li {
     -ms-grid-column: 2;
         grid-column-start: 2;
     grid-column-end: 3;
   }
-  main #gif-sect .tercer-li {
+  main #trend-sect .tercer-li {
     -ms-grid-column: 3;
         grid-column-start: 3;
     grid-column-end: 4;
   }
-  main #gif-sect .oculto1 {
+  main #trend-sect .oculto1 {
     display: none;
   }
-  main #gif-sect .oculto2 {
+  main #trend-sect .oculto2 {
     display: none;
+  }
+  @-webkit-keyframes izquierda {
+    0% {
+      left: 0;
+    }
+  }
+  @keyframes izquierda {
+    0% {
+      left: 0;
+    }
   }
 }
 

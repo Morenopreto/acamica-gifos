@@ -2,7 +2,13 @@ $violet: #572ee5;
 $aqua-green: #50e3c2;
 $i-color: #CDD6E0;
 $violet-opacity: rgba(87, 46, 229, 0.9);
-// $font-bold: "pn-bold";
+@font-face {
+  font-family: proxima;
+  src: url('/proxima_ssv/Proxima-Nova-Alt-Light.otf'), url('/proxima_ssv/Proxima-Nova-Alt-Thin.otf'), url('/proxima_ssv/Proxima-Nova-Black.otf'),
+  url('/proxima_ssv/Proxima-Nova-Bold.otf'), url('/proxima_ssv/Proxima-Nova-Extrabold.otf'),
+  url('/proxima_ssv/Proxima-Nova-Thin.otf'),url('/proxima_ssv/ProximaNova-Regular.otf'),url('/proxima_ssv/ProximaNova-AltBold.otf');
+}
+$font-bold: "proxima";
 // $font-regular: "pn-regular";
 
 // THEMES VARIABLES
@@ -30,6 +36,21 @@ $border-dark: 1px solid #FFFFFF;
 //   font-family: "pn-bold";
 //   src: url("proxima_ssv/ProximaNovaAltBold.otf");
 // }
+// .font-light{  
+//   color: $bg1-light;
+// }
+// .font-dark{
+//   color: $bg1-light;
+// }
+.bg-light{
+  background-color: $bg1-light;
+  
+}
+.bg-dark{
+  background-color: $bg1-dark;
+  transition: all 0.3s;  
+}
+// @media screen and (min-width: 800px) {
 .font-light{
   color: $violet;
   
@@ -38,37 +59,78 @@ $border-dark: 1px solid #FFFFFF;
   color: $bg1-light;
 }
 
-.bg-light{
-  background-color: $bg1-light;
-  
+@mixin hover-IandP {
+  .i-div {
+    transition: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    position: relative;
+    // top: -278px;
+    z-index: 10000;
+    background-color: $violet;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+    i {
+      @include i-logos;
+      transition: ease 0.3s;
+    }
+  }
+  .i-p-div{
+    transition: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    position: relative;
+    top: -278px;
+    z-index: 10000;
+    background-color: $violet;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+    p{
+      display: inline-block;
+    }
+  }
+  .user-carrousel {
+    // font-family: ProximaNova-Regular;
+    font-size: 15px;
+    color: $bg1-light;          
+    margin: 0 0 0 10px;
+    width: 100%;
+  }
+  .titulo-carrousel {
+    // font-family: ProximaNova-Bold;
+    font-size: 16px;
+    color: $bg1-light;
+    margin: 0 0 0 10px;          
+    
+  }  
 }
-.bg-dark{
-  background-color: $bg1-dark;
-  transition: all 0.3s;
-  
-}
+// }
 @mixin i-logos {
-  position: relative;
-  z-index: 100;
-  top: -219px;
   background: $bg1-light;
   border-radius: 6px;
   color: $violet;
   width: 32px;
   height: 32px;
-  opacity: 0.7;
+  // opacity: 0.7;
+  padding: 7.65px;
+  margin: 11px;
   
 }
 @mixin search-button {
-  background: $bg1-light;
+  // background: $bg1-light;
+  width: 89.06vw;
+  height: auto;
+  background: transparent;
   border: 1px solid $violet;
   border-radius: 27px;
   border-radius: 27px;
-  height: 50px;
-  width: 89.06vw;
   margin-left: 5.47vw;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -82,6 +144,7 @@ $border-dark: 1px solid #FFFFFF;
     text-align: left;
     padding: 11px 0 11px 14.6vw;
     box-sizing: content-box;
+    outline: none;
 
   }
   button{
@@ -92,6 +155,14 @@ $border-dark: 1px solid #FFFFFF;
  i{
   transform: scale(1.5)
  }}
+ #divCtrPredictivo{
+   display: flex;
+   flex-flow: column wrap;
+   #label0,
+   #label1{
+      border-bottom: 1px solid grey;
+   }
+ }
 }
 
 @mixin h1 {

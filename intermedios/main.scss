@@ -2,10 +2,12 @@ main {
   @include flex-rw;
   width: 100%;
   #search-sect {
-    width: 100%;
+    flex-flow: column wrap;
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
+
+    width: 100%;
     h1 {
       @include h1;
       width: 76.27vw;
@@ -35,8 +37,164 @@ main {
       }
     }
   }
+  //seccion que se agrega con JS
+  // ES LA SECCION QUE TIENE LOS GIFS RESULTADOS DE LA BUSQUEDA
+  .sectContGifs {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    #grey-line {
+      width: 20%;
+      height: 1px;
+      margin: 10px 40%;
+      background-color: grey;
+    }
+    #h2-keyword {
+      width: 100%;
+      color: $violet;
+      text-align: center;
+    }
+    .div-cont-gifs {
+      width: 88.8%;
+      display: grid;
+      grid-template: repeat(6, 120px) / repeat(2, 46.85%);
+      column-gap: 6.3%;
+      row-gap: 21px;
 
-  #gif-sect {
+      .i-div {
+        display: none;
+      }
+
+      .span-gifs-hover {
+        width: 100%;
+        height: 100%;
+        max-width: 156px;
+        max-height: 120px;
+        overflow: hidden;
+        video {
+          width: 100%;
+          height: 100%;
+          max-width: 156px;
+          max-height: 120px;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+        // &:hover {
+        //   @include hover-IandP;
+        //   .i-div,
+        //   .i-p-div {
+        //     top: -204px;
+        //   }
+        //   .i-p-div {
+        //     label {
+        //       font-size: 15px;
+        //       color: $bg1-light;
+        //       margin: 0 0 0 10px;
+        //       width: 100%;
+        //     }
+        //   }
+        // }
+      }
+    }
+    #verMas {
+      padding: 15px 30px;
+      border: 1px solid $violet;
+      border-radius: 34px;
+      background: transparent;
+      color: $violet;
+      &:hover{
+        background: $violet;
+        color: $bg1-light;
+      }
+    }
+  }
+  // GIF MAX///////////////////////
+  #max-section {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    #ctnX{
+      width: 48.26%;// POSIBLEMENTE CAMBIE!
+      height: 20.85%; // POSIBLEMENTE CAMBIE!
+      margin: 0 25.87%;// POSIBLEMENTE CAMBIE!
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      i{
+        width: 15.2px;
+        margin-top: 66.49px;
+        color: $violet;
+       
+        
+      }
+    }
+    #ctnVideo{
+      width: 100%;
+      height: 50.13%;
+      display: flex;
+      justify-content: center;
+      span{
+        width: 48.26%;
+        max-width: 596px;
+        max-height: 385px;
+      video{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+    i{
+      display: none;
+      &:hover{
+        color: $bg1-light;
+        background-color: $violet;
+      }
+    }
+    }
+    #ctnip{
+      width: 48.26%;
+      height: 29.04%;
+      margin: 0 25.86%;
+      .i-div {          
+        display: inline-flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        width: 50%;
+        i{
+          background: transparent;
+          border-radius: 6px;
+          border: 1px solid $violet;
+          color: $violet;
+          width: 36px;
+          height: 36px;
+          padding: 7.65px;
+          margin: 22px 0 0 22px;
+          -webkit-transition: ease 0.3s;
+          transition: ease 0.3s;
+        }
+
+        .fa-expand-alt{
+          display: none;
+        }
+      }
+    .i-p-div{
+      display: inline-flex;
+      flex-flow: column wrap;
+        justify-content: flex-start;
+        width: 50%;
+    }
+    }
+    
+  }
+  //seccion de trends
+  #trend-sect {
     width: 100%;
     background-color: $bg2-light;
     overflow: hidden;
@@ -78,123 +236,27 @@ main {
     .carrousel {
       @include flex-rw;
       justify-content: center;
+      overflow: hidden;
       width: 100%;
       list-style: none;
-      grid-row-start: 1;
-      grid-row-end: 2;
-      img {
+
+      video {
         width: 100%;
+        height: 100%;
+        // object-fit: cover;
+        object-fit: fill;
       }
-      .i-expand {
-        left: 222px;
-        padding: 7.65px;
-        @include i-logos;
-        margin-left: 10px;
-      }
-      .i-download {
-        left: 226px;
-        padding: 7.65px;
-        @include i-logos;
-
-        margin-left: 11px;
-      }
-      .i-heart {
-        left: 230px;
-        padding: 7.65px;
-        @include i-logos;
-      }
-
-      .user-carrousel {
-        // TODO ESTO ES PARA 1440PX!!! FIJARSE EN MOBILE
-        // font-family: ProximaNova-Regular;
-        font-size: 15px;
-        // color: $bg1-light;
-        color: red;
-        display: inline;
-        position: relative;
-        top: -59px;
-        left: -113px;
-        margin: 0;
-      }
-      .titulo-carrousel {
-        // TODO ESTO ES PARA 1440PX!!! FIJARSE EN MOBILE
-        // font-family: ProximaNova-Bold;
-        font-size: 16px;
-        // color: $bg1-light;
-        color: red;
-        display: inline;
-        margin: 0;
-        position: relative;
-        top: -33px;        
-        left: -146px;        
-      }
-      div{height: 100%;}
-    }
-  }
-
-  @media screen and (min-width: 800px) {
-    #search-sect {
-      h1 {
-        width: 64.86vw;
-        margin: 75px 17.59vw 0 17.59vw;
-        height: 100px;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        #firstpart-h1 {
-          width: 100%;
-        }
-      }
-      .search-bar {
-        width: 38.26vw;
-        margin: 0 30.87vw 0 30.87vw;
-        input {
-          width: 30vw;
-          padding: 11px 0 11px 3.75vw;
-        }
-      }      
-        #people-draw {
-          min-width: 273px;
-          max-width: 399px;
-          height: 190px;
-          margin: 25px 0 -4px 0;       
-        
-      }
-
-    }
-    #gif-sect {
-      .square-i{
-        margin: 0 30px 113px 30px;
-        font-size: 40px;
-        text-align: center;
-        align-self: center;
-        color: $violet;
-      }
-      #ul-carrousel {
-        width: 78.26vw;
-        grid-template: 100% / repeat(3, 1fr);
-        gap: 27px;
-        height: 275px;
-      }
-      .primer-li {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        
-      }
-      .segundo-li {
-        grid-column-start: 2;
-        grid-column-end: 3;
-      }
-      .tercer-li {
-        grid-column-start: 3;
-        grid-column-end: 4;
-      }
-      .oculto1 {
+      .i-div {
         display: none;
       }
-      .oculto2 {
-        display: none;
+
+      div {
+        width: 100%;
+        height: 100%;
       }
+    }
+    .square-i {
+      display: none;
     }
   }
 }

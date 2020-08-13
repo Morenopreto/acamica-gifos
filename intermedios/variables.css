@@ -1,9 +1,6 @@
-.font-light {
-  color: #572ee5;
-}
-
-.font-dark {
-  color: #ffffff;
+@font-face {
+  font-family: proxima;
+  src: url("/proxima_ssv/Proxima-Nova-Alt-Light.otf"), url("/proxima_ssv/Proxima-Nova-Alt-Thin.otf"), url("/proxima_ssv/Proxima-Nova-Black.otf"), url("/proxima_ssv/Proxima-Nova-Bold.otf"), url("/proxima_ssv/Proxima-Nova-Extrabold.otf"), url("/proxima_ssv/Proxima-Nova-Thin.otf"), url("/proxima_ssv/ProximaNova-Regular.otf"), url("/proxima_ssv/ProximaNova-AltBold.otf");
 }
 
 .bg-light {
@@ -14,5 +11,13 @@
   background-color: #37383C;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.font-light {
+  color: #572ee5;
+}
+
+.font-dark {
+  color: #ffffff;
 }
 /*# sourceMappingURL=variables.css.map */
