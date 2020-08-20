@@ -1,20 +1,29 @@
+// EN ESTE ARCHIVO PODEMOS ENCONTRAR:
+//- FUNCION QUE CREA HOME PAGE O SECCION DE BUSQUEDA CON SUS RESPECTIVAS IMAGENES, BARRA DE BUSQUEDA, ETC.
+
 //CREO LA SECCION HOMEPAGE
 let logoImg = document.getElementById('logo');
+
+
 
 logoImg.addEventListener('click', creaHP);
 
 creaHP();
 
+
 function creaHP() {
+    
     let primerasSect = document.getElementsByTagName('section');
     if (primerasSect[0].id != 'search-sect' && primerasSect[0].id != 'trend-sect') {
-        primerasSect[0].remove();        
-    //   if(document.getElementById('sectGifsBusqueda')!=null){document.getElementById('sectGifsBusqueda').remove();}      
+        primerasSect[0].remove();
+        trendSect.style.display = 'flex';
+        //   if(document.getElementById('sectGifsBusqueda')!=null){document.getElementById('sectGifsBusqueda').remove();}      
     };
-    if(document.getElementById('sectGifsBusqueda')!=null){document.getElementById('sectGifsBusqueda').remove();}
-    
+    if (document.getElementById('sectGifsBusqueda') != null) { document.getElementById('sectGifsBusqueda').remove(); }
+
     if (primerasSect[0].id != 'search-sect') {
         //CREO LA SECCION, LE DOY ID Y LA ACOMODO ARRIBA DE LOS TREND
+        window.scrollTo(0,0);
         var searchSect = document.createElement('section');
         searchSect.id = 'search-sect';
         main.insertBefore(searchSect, trendSect);
@@ -44,7 +53,7 @@ function creaHP() {
         // CREO EL CONTENEDOR PARA EL BOTON DE BUSQUEDA, LE DOY ID, CLASS Y LO AGREGO AL SECTION
         let searchDiv = document.createElement('div');
         searchDiv.classList.add('search-bar');
-        searchDiv.id='search-bar-div';
+        searchDiv.id = 'search-bar-div';
         searchSect.appendChild(searchDiv);
         // CREO UN SPAN PARA PODER TENER JUNTO EL INPUT SEARCH Y LA LUPA
         let spanCtn = document.createElement('span');
@@ -63,11 +72,18 @@ function creaHP() {
         spanCtn.appendChild(searchInput);
         let searchButton = document.createElement('button');
         searchButton.type = 'submit';
-        searchButton.id ='searchBtn';
+        searchButton.id = 'searchBtn';
         spanCtn.appendChild(searchButton);
         let lupa = document.createElement('i');
         lupa.classList.add('fas', 'fa-search');
         searchButton.appendChild(lupa);
+        //CREO LA CRUZ EN LA QUE SE VA A TRASNFORMAR LA LUPA CUANDO BUSCO
+        let searchX = document.createElement('i');
+        searchX.classList.add('fas', 'fa-times');
+        searchX.style.display = 'none';
+        searchX.id = 'searchX';
+        spanCtn.appendChild(searchX);
+
         // CREO EL TEXTO DEBAJO
         let h3Div = document.createElement('div');
         h3Div.id = 'h3-p';
@@ -82,23 +98,35 @@ function creaHP() {
         p.classList.add('font-light');
         p.textContent = 'Reactions, Entertainment, Sports, Stickers, Artists';
         h3Div.appendChild(p);
-        changeTags = []
-        changeTags.push(...anchorTag);
-        changeTags.push(fSpanH1);
-        changeTags.push(sSpanH1);
-        changeTags.push(h3);
-        changeTags.push(p);
-        if(document.getElementById('searchBar')!=null&& document.getElementById('search-bar-div')!=null){
-            
-             searchBarinput = document.getElementById('searchBar');
-             searchBarCont = document.getElementById('search-bar-div');
-             (typeof(creaLaBusqueda)=='function')?lupaOculta.addEventListener('click', creaLaBusqueda):{};
-             (typeof(creaAutoComplete)=='function')?searchBarinput.addEventListener('input',creaAutoComplete):{};
-        }
-        
-       
-}
+        // changeTags = []
+        // changeTags.push(...anchorTag);
+        // changeTags.push(fSpanH1);
+        // changeTags.push(sSpanH1);
+        // changeTags.push(h3);
+        // changeTags.push(p);
+        // changeTags.push(searchInput);
+        // changeTags.push(lupa);
+        if (document.getElementById('searchBar') != null && document.getElementById('search-bar-div') != null) {
 
+            searchBarinput = document.getElementById('searchBar');
+            searchBarCont = document.getElementById('search-bar-div');
+            (typeof (creaLaBusqueda) == 'function') ? lupaOculta.addEventListener('click', creaLaBusqueda) : {};
+            (typeof (creaAutoComplete) == 'function') ? searchBarinput.addEventListener('input', creaAutoComplete) : {};
+        }
+
+        let indiceColor = Array.from(document.getElementById('MNA').classList).indexOf('font-dark')
+        if(indiceColor != -1){
+            cambiaColor(0,1);
+            document.getElementById('search-bar-div').classList.toggle('border-ligth');
+            //CAMBIO EL COLOR DE LA LUPA (POR LA PROFUNDIDAD EN LA QUE ESTA DEFINIDA, NO LA AGARRA NINGUN FOR)
+       document.getElementById('searchBtn').firstChild.classList.toggle('font-dark')
+       document.getElementById('searchBar').classList.toggle('font-dark');
+        }
+    }
+    if(screen.width>800){
+        for(i=0;i<3;i++){
+        document.getElementsByTagName("a")[i].classList.add('font-light')}
+    }
 }
 
 

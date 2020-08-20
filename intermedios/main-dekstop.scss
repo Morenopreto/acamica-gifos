@@ -1,5 +1,6 @@
 main {
   @media screen and (min-width: 800px) {
+    margin: 100px 0 0 0;
     #search-sect {
       h1 {
         display: flex;
@@ -26,7 +27,7 @@ main {
         min-width: 273px;
         max-width: 399px;
         height: 190px;
-        margin: 25px 0 -4px 0;
+        margin: 25px 0 0px 0;
       }
     }
     .sectContGifs {
@@ -69,6 +70,8 @@ main {
           }
         }
       }
+      
+   
     }
     #max-section {
       width: 100vw;
@@ -88,7 +91,7 @@ main {
         justify-content: flex-end;
         i{
           width: 15.2px;
-          margin-top: 66.49px;
+          margin-top: 60.49px;
           color: $violet;
 
         }
@@ -96,12 +99,16 @@ main {
       #ctnVideo{
         width: 100%;
         height: 50.13%;
+        max-height: 378px;
         display: flex;
         justify-content: center;
+        align-items: center;
         span{
           width: 48.26%;
+          height: 100%;
           max-width: 596px;
           max-height: 385px;
+          overflow: hidden;
         video{
           width: 100%;
           height: 100%;
@@ -119,7 +126,8 @@ main {
       }
       }
       #ctnip{
-        width: 48.26%;
+        // width: 48.26%;
+        width: 41.26%;
         height: 29.04%;
         margin: 0 25.86%;
         .i-div {          
@@ -180,24 +188,24 @@ main {
           }
         }
       }
-      .primer-li {
-        grid-column-start: 1;
-        grid-column-end: 2;
-      }
-      .segundo-li {
-        grid-column-start: 2;
-        grid-column-end: 3;
-      }
-      .tercer-li {
-        grid-column-start: 3;
-        grid-column-end: 4;
-      }
-      .oculto1 {
-        display: none;
-      }
-      .oculto2 {
-        display: none;
-      }
+      // .primer-li {
+      //   grid-column-start: 1;
+      //   grid-column-end: 2;
+      // }
+      // .segundo-li {
+      //   grid-column-start: 2;
+      //   grid-column-end: 3;
+      // }
+      // .tercer-li {
+      //   grid-column-start: 3;
+      //   grid-column-end: 4;
+      // }
+      // .oculto1 {
+      //   display: none;
+      // }
+      // .oculto2 {
+      //   display: none;
+      // }
       @keyframes izquierda {
         0% {
           left: 0;

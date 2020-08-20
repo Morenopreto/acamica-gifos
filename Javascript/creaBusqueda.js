@@ -1,6 +1,13 @@
+// EN ESTE ARCHIVO PODEMOS ENCONTRAR:
+//-FUNCION PARA CREACION DE BUSQUEDA AL PRESIONAR LUPA O ALUNGA DE LAS OPCIONES DE AUTOCOMPLETE
+//-FUNCION (CREALOSGIFS) PARA CREAR, CON DOS PARAMETROS, EL CONTENEDOR DE LOS GIFS QUE SE BUSQUEN
+// ESTEN ALMACENADOS EN FAVORITOS O HAYAN SIDO CREADOS Y ESTEN ALMACENADOS EN MIS GIFOS.
+
 // BUSQUEDA DE GIF CON LA BARRA SEARCH Y LOS MUESTRA 4X3.
 var btnBusqueda = document.getElementById('searchBtn');
 var lupaOculta = document.getElementById('lupaOculta');
+var searchX = document.getElementById('searchX');
+
 let busquedaAsyncResult;
 let guardaArray;// creo que se puede borrar
 
@@ -14,9 +21,10 @@ function creaLaBusqueda() {
     if (document.getElementById('divCtrPredictivo') != null) {
         document.getElementById('divCtrPredictivo').remove();
     }
+    if(document.getElementById('head-search-bar-div')==null){
     keyword = searchBarinput.value;
-    // console.log('keyword: '+ keyword);
-    // console.log(searchBarinput);
+    }
+    else {keyword = document.getElementById('searchBarHeader').value }
     let sectContenedor = document.createElement('section');
     sectContenedor.id = 'sectGifsBusqueda';
     sectContenedor.classList.add('sectContGifs');
@@ -24,8 +32,8 @@ function creaLaBusqueda() {
 
     Giphy.busquedaAsync(keyword, function (arrayResults) {
 
-        // download="ImageNameHere"
-        console.log(arrayResults);
+        
+        
         busquedaAsyncResult = arrayResults;
         (document.getElementById('h2-keyword') != null) ? document.getElementById('sectGifsBusqueda').remove() : {};
 
@@ -48,14 +56,9 @@ function creaLaBusqueda() {
             div.classList.add('div-cont-gifs');
             sectContenedor.appendChild(div);
             // console.log(screen.width);
-            //LIMITO EL GRID PARA QUE SI VIENEN MENOS RESULTADOS, NO QUEDE UN ESPACIO BLANCO
-           if(screen.width>=800){
-            if (arrayResults.length <= 4) {
-                div.style.gridTemplateRows = '200px'
-            }
-            else if (arrayResults.length <= 8) {
-                div.style.gridTemplateRows = 'repeat(2, 200px)'
-            } else { div.style.gridTemplateRows = 'repeat(3, 200px)' }}
+
+            //LIMITO EL GRID PARA QUE SI VIENEN MENOS RESULTADOS, NO QUEDE UN ESPACIO BLANCO           
+            limitaGrid(div,arrayResults.length);
             //FIN DE LIMTANTE
             // CREO UNA VARIABLE PARA MOSTRAR COMO MAXIMO 12 Y COMO MINIMO, LA CANTIDAD QUE TRAIGA
             //EL ARRAY
@@ -63,38 +66,53 @@ function creaLaBusqueda() {
 
             for (i = 0; i < frenoCreacion; i++) {
                 creaLosGifs(arrayResults[i], 'div-cont-gifs-search');
-            }
-            let verMas = document.createElement('button');
+               }
+            if(arrayResults.length>12){
+                let verMas = document.createElement('button');
             verMas.textContent = 'Ver Mas';
             verMas.id = 'verMas';
             sectGifsBusqueda.appendChild(verMas);
+            verMas.addEventListener('click', verMasFunc);
+
+            }
+            let indiceColor = Array.from(document.getElementById('MNA').classList).indexOf('font-dark')
+        if(indiceColor != -1){
+            cambiaColor(1,2);
+        }
 
             // CHEQUEAR FUNCION VER MAS
-            verMas.addEventListener('click', verMasFunc);
         } else {
             let img = document.createElement('img');
             img.src = 'assets/icon-busqueda-sin-resultado.svg'
+            img.id = 'ouch';
             sectContenedor.appendChild(img);
             let h2 = document.createElement('h2');
             h2.textContent = 'Intenta con otra búsqueda.';
-            h2.style.width = '100%';
-            h2.style.color = '#50E3C2';
-            h2.style.textAlign = 'center';
+            h2.id ='IntentaOtra';
             sectContenedor.appendChild(h2);
 
         }
 
     }
     )
+    // vuelvo a dejar el input como al principio
+    btnBusqueda.style.display = 'inline-block';
+    lupaOculta.style.display = 'none';
+    searchX.style.display = 'none';
+    searchBarinput.style.borderBottom = '0px';
+    searchBarinput.value = '';
+    
 }
 
 // EXISTE UN CONTENDOR Y CON LA FUNCION CREO LA ESTRUCTURA DEL CONTENIDO DE ADENTRO
 function creaLosGifs(srcParam, divDonde) {
-    let div = document.getElementById(divDonde)
-    let source = srcParam.images.original.mp4
+    let div = document.getElementById(divDonde);
+    let source = srcParam.images.original.mp4;
     let span = document.createElement('span');
     span.id ='span-cnt-'+i;
     div.appendChild(span);
+    span.style.backgroundImage = 'url(assets/notAvailable.jpg)';
+    span.style.backgroundSize = 'contain';
     span.classList.add('span-gifs-hover');
     let mp4 = document.createElement('video');
     mp4.src = source;
@@ -110,8 +128,13 @@ function creaLosGifs(srcParam, divDonde) {
     let i2 = document.createElement('i');
     let ai2 = document.createElement('a');
     let i3 = document.createElement('i');
-    i1.classList.add('far', 'fa-heart');
-    i2.classList.add('fas', 'fa-heart');
+    if(document.getElementById('favSect')!=null){
+        i1.classList.add('fas', 'fa-heart');
+
+    }else{
+        i1.classList.add('far', 'fa-heart');
+    }
+    i2.classList.add('fas', 'fa-download');
     i3.classList.add('fas', 'fa-expand-alt');
     divI.appendChild(i1);
     divI.appendChild(ai2);
@@ -133,16 +156,17 @@ function creaLosGifs(srcParam, divDonde) {
     divP.appendChild(label1);
     divP.appendChild(label2);
     //SOLO PARA CUANDO ESTA EN HP!
-    if (document.getElementById('search-sect') != null) {
-        i1.addEventListener('click', agregaFav);
-        i3.addEventListener('click', gifMax);
-    }
-    console.log(screen.width);
-    if(screen.width<=800){
+    // if (document.getElementById('search-sect') != null) {
+    i1.addEventListener('click', agregaFav);
+    // }else if(document.getElementById('favSect') != null){
         
-    // span.addEventListener('click',gifMax)
+    //     i1.addEventListener('click',function(){console.log('Deberia eliminar!')});
+        
+    // }
+    i3.addEventListener('click', gifMax);
+
+    if(window.innerWidth<=800){
     span.addEventListener('click',gifMax)}
 }
-// Un botón de ‘Ver más’: la acción es mostrar 12 resultados más cada vez que se apriete (es decir, que a medida que el usuario elija esta opción una y otra vez, deberán mostrarse en total 24, 36, 48 —y así sucesivamente— resultados por pantalla). El botón siempre debe quedar expuesto y desaparecer cuando no hay más resultados para mostrar.
 
 

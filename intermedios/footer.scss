@@ -15,6 +15,9 @@ footer {
     margin: 1px 0 0.8px 0;
     font-size: 18px;
     color: $i-color;
+    &:hover{
+    color: $violet;  
+    }
   }
   #fb {
     justify-self: self-end;

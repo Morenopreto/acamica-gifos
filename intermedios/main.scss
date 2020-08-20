@@ -18,10 +18,37 @@ main {
       width: 72.8vw;
       height: 22.26vh;
       // margin: 27px 0 -4px 13.6vw;
-      margin: 27px 0 -4px 0;
+      margin: 27px 0 0px 0;
     }
     .search-bar {
       @include search-button;
+      // #lupaOculta {
+      //   color: #9cafc3;
+      //   font-size: 20px;
+      // }
+      // #searchX {
+      //   color: $violet;
+      //   font-size: 17px;
+      // }
+      // #divCtrPredictivo {
+      //   width: 92%;
+      //   &:first-child {
+      //     margin-top: 14px;
+      //   }
+      //   span {
+      //     height: 22px;
+      //     margin: 5px 0;
+      //     color: #9cafc3;
+      //     font-size: 16px;
+      //     text-align: left;
+      //     label {
+      //       padding: 0 14.6px;
+      //       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      //         Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      //         sans-serif;
+      //     }
+      //   }
+      // }
     }
     #h3-p {
       // margin: 43px 0 48px 18.67vw;
@@ -54,6 +81,15 @@ main {
     #h2-keyword {
       width: 100%;
       color: $violet;
+      text-align: center;
+      margin: 70.9px 0 112px 0;
+    }
+    #ouch {
+      margin: 0 0 28px 0;
+    }
+    #IntentaOtra {
+      margin: 0 0 150px 0;
+      color: #50e3c2;
       text-align: center;
     }
     .div-cont-gifs {
@@ -99,14 +135,18 @@ main {
       }
     }
     #verMas {
+      margin-bottom: 79px;
       padding: 15px 30px;
       border: 1px solid $violet;
       border-radius: 34px;
       background: transparent;
       color: $violet;
-      &:hover{
+      &:hover {
         background: $violet;
         color: $bg1-light;
+      }
+      &:focus {
+        outline: none;
       }
     }
   }
@@ -120,54 +160,62 @@ main {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    #ctnX{
-      width: 48.26%;// POSIBLEMENTE CAMBIE!
-      height: 20.85%; // POSIBLEMENTE CAMBIE!
-      margin: 0 25.87%;// POSIBLEMENTE CAMBIE!
+    z-index: 999999;
+    #ctnX {
+      width: 86.26%;
+      height: 20.85%;
+      margin: 0 6.87%;
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-end;
-      i{
+      i {
         width: 15.2px;
         margin-top: 66.49px;
         color: $violet;
-       
-        
       }
     }
-    #ctnVideo{
+    #ctnVideo {
       width: 100%;
       height: 50.13%;
+      max-height: 247px;
       display: flex;
       justify-content: center;
-      span{
-        width: 48.26%;
-        max-width: 596px;
-        max-height: 385px;
-      video{
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
+      span {
+        width: 84.8%; // CORRECTO
+        max-width: 318px;
+        // height: 41.95%; // POSIBLEMENTE CAMBIE!
+        max-height: 245px;
+        // margin: 0 7.73%;// POSIBLEMENTE CAMBIE!
+
+        // width: 48.26%;
+        // max-width: 596px;
+        // max-height: 385px;
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
+      }
+      i {
+        display: none;
+        &:hover {
+          color: $bg1-light;
+          background-color: $violet;
+        }
       }
     }
-    i{
-      display: none;
-      &:hover{
-        color: $bg1-light;
-        background-color: $violet;
-      }
-    }
-    }
-    #ctnip{
-      width: 48.26%;
+    #ctnip {
+      display: flex;
+      flex-flow: row wrap;
+      width: 81.26%;
       height: 29.04%;
-      margin: 0 25.86%;
-      .i-div {          
+      margin: 0;
+      .i-div {
         display: inline-flex;
         flex-flow: row wrap;
         justify-content: flex-end;
         width: 50%;
-        i{
+        i {
           background: transparent;
           border-radius: 6px;
           border: 1px solid $violet;
@@ -175,23 +223,25 @@ main {
           width: 36px;
           height: 36px;
           padding: 7.65px;
-          margin: 22px 0 0 22px;
+          margin: 0 0 0 22px;
           -webkit-transition: ease 0.3s;
           transition: ease 0.3s;
         }
 
-        .fa-expand-alt{
+        .fa-expand-alt {
           display: none;
         }
       }
-    .i-p-div{
-      display: inline-flex;
-      flex-flow: column wrap;
+      .i-p-div {
+        display: inline-flex;
+        flex-flow: column wrap;
         justify-content: flex-start;
         width: 50%;
+        label:nth-child(2) {
+          font-weight: bold;
+        }
+      }
     }
-    }
-    
   }
   //seccion de trends
   #trend-sect {
@@ -228,18 +278,22 @@ main {
     }
     #ul-carrousel {
       display: grid;
-      grid-template: 187px / repeat(5, 64.8%);
+      // grid-template: 187px / repeat(3, 64.8%);
+      grid-template: 187px / repeat(3, 64.8%);
       justify-content: center;
       gap: 22px;
       margin: 0 0 82px 0;
     }
     .carrousel {
+      background-size: contain;
+      background-image: url(assets/notAvailable.jpg);
       @include flex-rw;
       justify-content: center;
       overflow: hidden;
       width: 100%;
       list-style: none;
-
+      grid-row-start: 1;
+      grid-row-end: 2;
       video {
         width: 100%;
         height: 100%;
@@ -257,6 +311,327 @@ main {
     }
     .square-i {
       display: none;
+    }
+    ///////////////////////////agregado ver como funcion
+    .primer-li {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    .segundo-li {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    .tercer-li {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+    .oculto1 {
+      display: none;
+    }
+    .oculto2 {
+      display: none;
+    }
+    ///////////////////////////agregado ver como funcion hasta aca
+  }
+  //SECCION FAVORITOS
+  #favSect {
+    width: 100%;
+    text-align: center;
+    h2 {
+      color: $violet;
+    }
+    #divFavEmpty {
+      display: flex;
+      flex-flow: column wrap;
+      margin: 109.3px 0 137px 0;
+      align-items: center;
+      img {
+        margin-bottom: 23.7px;
+      }
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        color: $aqua-green;
+        text-align: center;
+        line-height: 33px;
+        font-weight: bold;
+        max-width: 431px;
+      }
+    }
+    #verMas {
+      margin-bottom: 79px;
+      padding: 15px 30px;
+      border: 1px solid $violet;
+      border-radius: 34px;
+      background: transparent;
+      color: $violet;
+      &:hover {
+        background: $violet;
+        color: $bg1-light;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  #misGifosSect {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-items: center;
+    align-items: center;
+    h2 {
+      color: $violet;
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+      text-align: center;
+      line-height: 30px;
+      margin: 8px 0 36px 0;
+    }
+    #divMisGifosEmpty {
+      display: flex;
+      width: 100%;
+      flex-flow: column wrap;
+      align-items: center;
+      img {
+        margin: 75px 0 0 0;
+      }
+      p {
+        font-size: 22px;
+        text-align: center;
+        line-height: 25px;
+        margin: 40px 0 136px 0;
+        font-weight: bold;
+        color: $aqua-green;
+      }
+    }
+  }
+  #addGifSect {
+    width: 90%;
+    display: grid;
+    grid-template: (75% 25%) / (25% 5% 50% 5% 15%);
+    min-height: 572px;
+    margin: 0 0 26px 0;
+
+    #divCamara {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      align-self: center;
+      display: flex;
+      justify-content: flex-end;
+      :first-child {
+        max-width: 123px;
+        max-height: 162px;
+        width: 53%;
+      }
+    }
+    #divCanvas {
+      // display: flex;
+      // flex-flow: row wrap;
+      display: grid;
+      grid-template: 1fr/1fr;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $violet;
+      padding: 20px;
+
+      #podras {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        color: $violet;
+        font-size: 25px;
+        text-align: center;
+        line-height: 35px;
+        padding: 0 120px;
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        span {
+          color: $aqua-green;
+        }
+      }
+      p {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        color: #000000;
+        text-align: center;
+        line-height: 29px;
+      }
+      video {
+        display: none;
+        width: 100%;
+        height: 100%;
+        grid-row-start: 1;
+        grid-column-start: 1;
+      }
+
+      #imgGif {
+        width: 100%;
+        height: 100%;
+        grid-row-start: 1;
+        grid-column-start: 1;
+      }
+      #loader {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        margin-left: 48%;
+        width: 22px;
+        height: 22px;
+        z-index: 1000;
+        animation: giroLoader 5s infinite;
+      }
+      @keyframes giroLoader {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(90deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        75% {
+          transform: rotate(270deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      #pLoader {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        font-size: 16px;
+        color: #ffffff;
+        text-align: center;
+        z-index: 100;
+        margin-top: 72px;
+      }
+      #tickSubido {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        margin-left: 48%;
+        width: 22px;
+        height: 22px;
+        z-index: 1000;
+        animation: subido cubic-bezier(0, 0, 1, -0.98) 0.5s;
+      }
+      @keyframes subido {
+        0% {
+          transform: scale(0.4);
+        }
+        100% {
+          transform: scale(1.2);
+        }
+      }
+      #divVioleta {
+        background-color: $violet;
+        opacity: 0.6;
+        width: 100%;
+        height: 100%;
+        grid-row-start: 1;
+        grid-column-start: 1;
+      }
+      .sq-deco-verde {
+        width: 27px;
+        height: 25px;
+        position: absolute;
+      }
+      #sq-verde-1 {
+        border-top: 1px solid $aqua-green;
+        border-left: 1px solid $aqua-green;
+      }
+      #sq-verde-2 {
+        border-top: 1px solid $aqua-green;
+        border-right: 1px solid $aqua-green;
+        left: 73.7%;
+      }
+      #sq-verde-3 {
+        border-bottom: 1px solid $aqua-green;
+        border-left: 1px solid $aqua-green;
+        top: 42.5%;
+      }
+      #sq-verde-4 {
+        border-bottom: 1px solid $aqua-green;
+        border-right: 1px solid $aqua-green;
+        left: 73.7%;
+        top: 42.5%;
+      }
+    }
+    #numbersButtonDiv {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 5;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      span {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        label {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+          font-size: 18px;
+          color: $violet;
+          text-align: center;
+          margin: 24px 13px 19px 13px;
+          border: 1px solid $violet;
+          padding: 3px 0 0 0;
+          width: 32px;
+          height: 32px;
+          text-align: center;
+          border-radius: 50%;
+        }
+      }
+      #lineaVioleta {
+        background: $violet;
+        border-radius: 5px;
+        height: 6.9px;
+      }
+      button {
+        border: 1px solid $violet;
+        color: $violet;
+        font-family: "Montserrat", sans-serif;
+        padding: 10px 16px;
+        background: transparent;
+        border-radius: 25px;
+        outline: none;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0;
+        text-align: center;
+        margin: 20.1px 0 0 0;
+      }
+    }
+    #cintaDiv {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 5;
+      align-self: end;
+      width: 100%;
+      max-width: 142px;
+      max-height: 88px;
+      padding-left: 11px;
+      margin-bottom: 48px;
+    }
+    #divAutoriza {
+      :first-child {
+        font-family: "Montserrat", sans-serif;
+        font-size: 25px;
+        color: $violet;
+        text-align: center;
+        line-height: 35px;
+      }
+      :nth-child(2) {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        color: #000000;
+        text-align: center;
+        line-height: 28px;
+      }
     }
   }
 }

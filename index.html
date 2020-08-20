@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/7f2c6b5e53.js"
       crossorigin="anonymous"
     ></script>
+    <script src='https://www.WebRTC-Experiment.com/RecordRTC.js'></script>
     <title>Gifos</title>
   </head>
   <body>
-    <header class="bg-light">    
+    <header id='header'class="bg-light">    
       <div class="navdiv">
         <span id="img-log">
           <img id="logo" src="assets/logo-desktop-modo-noc.svg" alt="logo-gifos" />
-          <h2 class="font-light">GIFOS</h2>
+          <h2 id="h2-logo" >GIFOS</h2>
         </span>
         <input
           type="checkbox"
@@ -24,43 +25,44 @@
           id="menuinput"
           class="menucheckbox"
         />
-        <label for="menuinput" class="burger menu"><span></span></label>
-        <nav>
-          <ul>
+        <label for="menuinput" id='burgerMenu' class="burger menu"><span></span></label>
+        <nav id="navBar">
+          <ul id="ulnavBar">
             <li id="MN" class="navli">
-              <a id="MNA" class="font-light" >Modo Nocturno</a>
+              <a id="MNA" >Modo Nocturno</a>
             </li>
 
-            <li id="fav" class="navli"><a class="font-light">Favoritos</a></li>
+            <li id="fav" class="navli"><a>Favoritos</a></li>
 
             <li id="mi-gif" class="navli">
-              <a class="font-light">Mis GIFOS</a>
+              <a>Mis GIFOS</a>
             </li>
-            <li><button id="add-gif"></button></li>
+            <li id="li-Add-Gif"><button id="add-gif"><i class="fas fa-plus"></i></button></li>
           </ul>
         </nav>
       </div>
     </header>
     <main id='main' class="bg-light">
+      <!-- ESPACIO PARA SECCIONES CREADAS DINAMICAMENTE -->
+
       <section id="trend-sect">
         <h2 class="font-light">Trending GIFOS</h2>
         <p class="font-light">
           <span id="mira-span"> Mira los últimos </span> GIFOS de nuestra
           comunidad.
         </p>
-        <i class="far fa-caret-square-left square-i"></i>
+        <i id='izq-trending' class="fas fa-chevron-left square-i"></i>
         <ul id="ul-carrousel">
-          <li class="carrousel primer-li" id="li1" style="background-color: red;">
+          <li class="carrousel primer-li" id="li1"">
             <div>
               <video
               id="primerIMG"
-              src="https://media0.giphy.com/media/DvyLQztQwmyAM/giphy.mp4?cid=240d24095gt9jmouaqn2x871y75s6tblv98u0uy34vljr82t&rid=giphy.mp4"
                 autoplay='true' loop='true'
               /></video>
               <div class="i-div">
                 <i class="far fa-heart "></i>
-                <i class="fas fa-heart "></i>
-                <i class="fas fa-expand-alt "></i>                
+                <i class="fas fa-download"></i>
+                <i id='max-trend-1' class="fas fa-expand-alt" ></i>                
               </div>
               <div class="i-p-div">
                 <label class="user-carrousel">User</label>
@@ -68,18 +70,17 @@
             </div>
             </div>
           </li>
-          <li class="carrousel segundo-li" id="li2" style="background-color: blue;">
+          <li class="carrousel segundo-li" id="li2"">
             <div>
               <video
               id="primerIMG"
-              src="https://media1.giphy.com/media/3o7TKSha51ATTx9KzC/giphy.mp4?cid=240d24095gt9jmouaqn2x871y75s6tblv98u0uy34vljr82t&rid=giphy.mp4"
                 autoplay='true' loop='true'
               /></video>
               <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
               <div class="i-div">
                 <i class="far fa-heart "></i>
-                <i class="fas fa-heart "></i>
-                <i class="fas fa-expand-alt"></i>
+                <i class="fas fa-download"></i>
+                <i id='max-trend-2' class="fas fa-expand-alt" ></i>
               </div>
               <div class="i-p-div">
                 <label class="user-carrousel">User</label>
@@ -87,18 +88,17 @@
             </div>
             </div>
           </li>
-          <li class="carrousel tercer-li" id="li3" style="background-color: pink;">
+          <li class="carrousel tercer-li" id="li3"">
             <div>
               <video
               id="primerIMG"
-              src="https://media0.giphy.com/media/Y42OeCcJI4ufXDQ3oA/giphy.mp4?cid=240d24095gt9jmouaqn2x871y75s6tblv98u0uy34vljr82t&rid=giphy.mp4"
                 autoplay='true' loop='true'
               /></video>
               <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
               <div class="i-div">
                 <i class="far fa-heart "></i>
-                <i class="fas fa-heart "></i>
-                <i class="fas fa-expand-alt"></i>
+                <i class="fas fa-download"></i>
+                <i id='max-trend-3'class="fas fa-expand-alt" ></i>
               </div>
               <div class="i-p-div">
                 <label class="user-carrousel">User</label>
@@ -106,18 +106,17 @@
             </div>              
             </div>
           </li>
-          <li class="carrousel oculto1" id="li4" style="background-color: purple;">
+          <li class="carrousel oculto1" id="li4">
             <div>
               <video
               id="primerIMG"
-              src="https://media3.giphy.com/media/QvBoMEcQ7DQXK/giphy.mp4?cid=240d24095gt9jmouaqn2x871y75s6tblv98u0uy34vljr82t&rid=giphy.mp4"
                 autoplay='true' loop='true'
               /></video>
               <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
               <div class="i-div">
                 <i class="far fa-heart "></i>
-                <i class="fas fa-heart "></i>
-                <i class="fas fa-expand-alt "></i>
+                <i class="fas fa-download"></i>
+                <i id='max-trend-4' class="fas fa-expand-alt "></i>
               </div>
               <div class="i-p-div">
                 <label class="user-carrousel">User</label>
@@ -125,18 +124,17 @@
             </div>
             </div>
           </li>
-          <li class="carrousel oculto2" id="li5" style="background-color: saddlebrown;">
+          <li class="carrousel oculto2" id="li5">
             <div>
               <video
               id="primerIMG"   
-              src="https://media3.giphy.com/media/1xOOQSMJ9X4UykElSk/giphy.mp4?cid=240d24095gt9jmouaqn2x871y75s6tblv98u0uy34vljr82t&rid=giphy.mp4"          
                 autoplay='true' loop='true'
               /></video>
               <!-- <i class="fas fa-heart"></i> CORAZON PINTADO! CAMBIAR FAS POR FAR Y ES EL OTRO  -->
               <div class="i-div">
               <i class="far fa-heart "></i>
-              <i class="fas fa-heart "></i>
-              <i class="fas fa-expand-alt "></i>
+              <i class="fas fa-download"></i>
+              <i id='max-trend-5'class="fas fa-expand-alt "></i>
             </div>
             <div class="i-p-div">
               <label class="user-carrousel">User</label>
@@ -145,29 +143,32 @@
             </div>
           </li>
         </ul>
-        <i class="far fa-caret-square-right square-i"></i>
+        <i id='der-trending' class="fas fa-chevron-right square-i"></i>
       </section>
     </main>
-    
     <footer class="bg-light">
       <h5 class="i-grid100" id="share-in">Compartir en:</h5>
-      <i id="fb" class="fab fa-facebook-f i-grid"></i>
-      <i id="tw" class="fab fa-twitter i-grid"></i>
-      <i id="inst" class="fab fa-instagram i-grid"></i>
+      <a href="https://www.facebook.com/" target="_blank"><i id="fb" class="fab fa-facebook-f i-grid"></i></a>
+     <a href="https://twitter.com/intent/tweet?text=Conoce%20GIFOS%20la%20pagina%20para%20crear%20tus%20propios%20Gifs!%20&url=https://solodiossabe.com&
+     " target="_blank"> <i id="tw" class="fab fa-twitter i-grid"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i id="inst" class="fab fa-instagram i-grid"></i></a>
 
       <p id="p-foot" class="i-grid100 font-light">
         <i class="far fa-copyright"></i>GIFOS 2020 All Rights Reserved
       </p>
     </footer>
     <div id="scripts">
-    <script src="index.js"></script>
-    <script id='creaHPJS'src="creaHP.js"></script>
-    <script id='favoritosJS'src="favoritos.js"></script>
-    <script id='giphyJS'src="giphy.js"></script>
-    <script id='autocompleteJS'src="autocomplete.js"></script>
-    <script id='verMasJS'src="verMas.js"></script>
-    <script id='creaBusquedaJS'src="creaBusqueda.js"></script>
-    <script id='gifMaxJS'src="gifMax.js"></script>
+    <script src="Javascript/generales.js"></script>
+    <script id='creaHPJS'src="Javascript/creaHP.js"></script>
+    <script id='favoritosJS'src="Javascript/favoritos.js"></script>
+    <script id='giphyJS'src="Javascript/giphy.js"></script>
+    <script id='autocompleteJS'src="Javascript/autocomplete.js"></script>
+    <script id='verMasJS'src="Javascript/verMas.js"></script>
+    <script id='creaBusquedaJS'src="Javascript/creaBusqueda.js"></script>
+    <script id='gifMaxJS'src="Javascript/gifMax.js"></script>
+    <script id='misGifosJS'src="Javascript/misGifos.js"></script>
+    <script id='addGifJS'src="Javascript/addGif.js"></script>
+    <script id='searchBarHeaderJS'src="Javascript/searchBarHeader.js"></script>
   </div>
   
   </body>
